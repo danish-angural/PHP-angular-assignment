@@ -6,10 +6,13 @@ if($_SESSION['username']){
     if($_POST['id']){
         $id=$_POST['id'];
         print_r($_POST);
-        $query=$conn->prepare("UPDATE queries SET sorted=1 WHERE id=?");
+        $c=$_POST['comment'];
+        $query=$conn->prepare("UPDATE queries SET sorted=1, comment='$c' WHERE id=?");
         $query->execute([$id[0]]);
         if($query){
             $_SESSION['queries'][$id[1]]['sorted']=1;
+            $_SESSION['queries'][$id[1]]['comment']=$c;
+            print($id);
             header("Location: admin.php");
         }
     }

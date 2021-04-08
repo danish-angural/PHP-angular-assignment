@@ -73,7 +73,11 @@ th{
 </style>
 
 <body>
-
+<div class="toast">
+	<?php if ($_SESSION['message']){?>
+			<?=$_SESSION['message']?>
+			<?php } ?>
+            </div>
 <a href="logout.php" class="btn btn-warning" style="position: absolute; right: 0; margin-right: 5vw; margin-top: 5vw;">LOGOUT</a>
 <div class="d-flex justify-content-center align-items-center flex-column" style="min-height: 20vh;">
 	 	<i class="bi bi-person-fill" style="font-size: 10rem;  color:#5C4033" ></i>
@@ -88,7 +92,7 @@ th{
       <option value="Aum">Basketball</option>
       <option value="Bharghavi">Badminton</option>
       <option value="Aniket">Weightlifting</option>
-      <option value="Riyan">Football</option>
+      <option value="riyan">Football</option>
     </select>
   </div>
   <div class="form-group">
@@ -105,6 +109,7 @@ th{
   <th><b>For</b></th>
   <th><b>Query</b></th>
   <th><b>resolved</b></th>
+  <th><b>Comment</b></th>
   </tr>
   <?php for ($i=0; $i<count($_SESSION['queries']); $i++) {
     echo "<tr style=background:".($_SESSION['queries'][$i]['sorted'] ? 'lightgreen': 'red').">";
@@ -116,6 +121,9 @@ th{
   echo "</td>";
   echo "<td>";
   echo($_SESSION['queries'][$i]['sorted'] ? "yes":"no");
+  echo "</td>";
+  echo "<td>";
+  echo($_SESSION['queries'][$i]['comment'] ? $_SESSION['queries'][$i]['comment']: 'None');
   echo "</td>";
   echo "</tr>";
 } ?>

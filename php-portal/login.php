@@ -248,7 +248,7 @@ a {
                     <div class="login-space">
                         <div class="login">
 							<form action="auth.php" method="post">
-                            <div class="group"> <label for="user" class="label">Username</label> <input id="user" type="email" name='email' class="input" placeholder="Enter your username"> </div>
+                            <div class="group"> <label for="user" class="label">Email</label> <input id="user" type="email" name='email' class="input" placeholder="Enter your email"> </div>
                             <div class="group"> <label for="pass" class="label">Password</label> <input id="pass" type="password" name='password' class="input" data-type="password" placeholder="Enter your password"> </div>
                             <div class="group"> <input id="check" type="checkbox" class="check" checked> <label for="check"><span class="icon"></span> Keep me Signed in</label> </div>
                             <div class="group"> <input type="submit" class="button" value="Sign In"> </div>
@@ -269,15 +269,16 @@ a {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="toast">
+                <div class="toast">
 	<?php if ($_SESSION['message']){?>
 			<?=$_SESSION['message']?>
 			<?php } ?>
             </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
 </body>
 </html>
 <?php 

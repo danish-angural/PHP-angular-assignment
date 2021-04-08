@@ -88,7 +88,8 @@ hr.solid{
   <th><b>Query</b></th>
   <th><b>resolved</b></th>
   </tr>
-  <?php for ($i=0; $i<count($_SESSION['queries']) && $_SESSION['queries'][$i]['sorted']==0; $i++) {
+  <?php for ($i=0; $i<count($_SESSION['queries']); $i++) {
+    if( $_SESSION['queries'][$i]['sorted']==1) continue;
     echo "<tr style=background:".($_SESSION['queries'][$i]['sorted'] ? 'lightgreen': 'red').">";
     echo "<td class='target'>";
   echo($_SESSION['queries'][$i]['sender']);
@@ -100,7 +101,8 @@ hr.solid{
   echo($_SESSION['queries'][$i]['sorted'] ? "yes":"no");
   echo "</td>";
   echo "<td>";
-  echo("<form action='resolve.php' method='post'><input value='$t' type='hidden' name='id[]'><input value=$i type='hidden' name='id[]'><button type='submit'>resolved</button></form>");
+  $t=$_SESSION['queries'][$i]['id'];
+  echo("<form action='resolve.php' method='post'><input value='$t' type='hidden' name='id[]'><input type='text' name='comment'><input value=$i type='hidden' name='id[]'><button type='submit'>resolved</button></form>");
   echo "</td>";
   echo "</tr>";
 } ?>
@@ -116,7 +118,8 @@ hr.solid{
   <th><b>Query</b></th>
   <th><b>resolved</b></th>
   </tr>
-  <?php for ($i=0; $i<count($_SESSION['queries']) && $_SESSION['queries'][$i]['sorted']; $i++) {
+  <?php for ($i=0; $i<count($_SESSION['queries']); $i++) {
+        if( $_SESSION['queries'][$i]['sorted']==0) continue;
     echo "<tr style=background:".($_SESSION['queries'][$i]['sorted'] ? 'lightgreen': 'red').">";
     echo "<td class='target'>";
   echo($_SESSION['queries'][$i]['sender']);
