@@ -1,11 +1,12 @@
-# Secure Login system using PHP with MYSQL database
+# PHP Portal
 
 version: 1.0.0
 
 to run
 * copy this folder to var/www/html
 * change the db_conn file according to your database credentials
-* run the db_init.sql file to initialise database and create tables
+* verify yout smtp server details in /etc/php.ini
+* run db_ini.sql
 * go to 127.0.0.1/php-portal
 
 features:
