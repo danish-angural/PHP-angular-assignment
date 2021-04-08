@@ -2,14 +2,13 @@
 
 version: 1.0.0
 
-### UserName : eliasfsdev@gmail.com
+to run
+* copy this folder to var/www/html
+* change the db_conn file according to your database credentials
+* run the db_init.sql file to initialise database and create tables
+* go to 127.0.0.1/php-portal
 
-### Password : 12345
-
-## Full Tutorial
-
-[On Youtube](https://youtu.be/QxZxHUf7c_0)
-
-## Authors
-
-[Elias Abdurrahman](https://github.com/codingWithElias)
+features:
+* immediate prompt for any wrong user credential or any invaild query
+* display every previous query by students and color them according to their status.
+* responsive
