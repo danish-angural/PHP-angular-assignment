@@ -1,8 +1,8 @@
 <?php 
 
 $sName = "127.0.0.1";
-$uName = "danish";
-$pass = "dani@2001";
+$uName = "";
+$pass = "";
 $db_name = "test_db";
 
 try {
